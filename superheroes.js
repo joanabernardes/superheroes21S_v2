@@ -738,6 +738,7 @@ const superheroes = [
   },
   {
     id: 123456789101112,
+    //array
     powers: [
       "Beauty",
       "Grace",
@@ -757,6 +758,8 @@ const superheroes = [
     ],
     image: "http://baevastudios.com/MissElegance.jpg",
     enemies: 0,
+   
+    //object
     sidekick: {
       name: "Monsieur Élégant",
       cape: false,
@@ -764,3 +767,20 @@ const superheroes = [
   },
 ];
 //Start your code here
+//Array that needs to be looped through//
+
+
+superheroes.forEach(showHero);
+
+function showHero(hero){
+  const template = document.querySelector("template").content;
+  const myCopy = template.cloneNode(true);
+  myCopy. querySelector("h1").textContent = hero.alias;
+  myCopy. querySelector("img").src = hero.image;
+  myCopy. querySelector(".powers").textContent = hero.image;
+  myCopy. querySelector(".sidekick h2").textContent = hero.sidekick.name;
+  const parent = document.querySelector("main");
+  parent.appendChild(myCopy);
+}
+
+
